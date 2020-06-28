@@ -90,9 +90,9 @@ class Server:
 @click.command()
 @click.argument("port_num", nargs=1, type=int)
 def main(port_num):
-    """Starting Daiquiri master server"""
-    master = Master(port_num)
-    master.start()		
+    """Starting Daiquiri server"""
+    server = Server(port_num)
+    server.start()		
 
 
 if __name__ == '__main__':

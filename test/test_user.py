@@ -90,3 +90,15 @@ class Donor:
 		s.connect((self.server_host, self.server_port))
 		s.sendall(message.encode('utf-8'))
 		s.close()
+
+@click.command()
+@click.argument("donate_time", nargs=1, type=float)
+@click.argument("port", nargs=1, type=int)
+def main(port, donate_time):
+    """Starting Daiquiri master server"""
+    donor = Donor(port, donate_time)
+    donor.start()		
+
+
+if __name__ == '__main__':
+	main()
