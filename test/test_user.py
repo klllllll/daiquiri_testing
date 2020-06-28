@@ -1,4 +1,5 @@
 '''Unit test on donor starts and donor registration.'''
+import os
 import socket
 import threading
 import click
