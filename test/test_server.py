@@ -38,6 +38,7 @@ class Server:
 		"""Listen message from donor."""
 
 		# executing all the life time
+		print("listen thread start")
 		while True:
 			conn, _ = self.socket_donors.accept()
 			message = ''
@@ -69,6 +70,8 @@ class Server:
 			'loss': 0		
 		}
 		self.registered_donors.append(donor)
+
+		print("donor reg received, IP addr: " + donor['host'])
 
 		# send an acknowledge message back to the donor
 		response_message = {
