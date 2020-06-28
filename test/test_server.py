@@ -6,7 +6,7 @@ import click
 class Server:
 	"""Define class Server."""
 	
-	def __init__(port):
+	def __init__(self, port):
 		"""Init."""
 
 		self.registered_donors = []

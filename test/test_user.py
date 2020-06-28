@@ -6,7 +6,7 @@ import click
 class Donor:
 	"""Define class Donor."""
 
-	def __init__(port, time):
+	def __init__(self, port, time):
 		"""Init."""
 
 		self.host = socket.gethostbyname(socket.gethostname())
