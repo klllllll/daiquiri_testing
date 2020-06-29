@@ -64,6 +64,7 @@ class Donor:
 
 		device_info = {}
 		# TODO: What else do we need here?
+		'''
 		try:
 			# in case of permission being denied
 			device_info['physical_cores'] = psutil.cpu_count(logical=False)
@@ -75,7 +76,9 @@ class Donor:
 			#device_info['gpu'] = gputil.getGPUS()
 		except PermissionError:
 			device_info['error'] = 'Permission Denied'
+		'''
 
+		device_info['info'] = 'aws failed installing psutil!!'
 		return json.dumps(device_info)
 
 
