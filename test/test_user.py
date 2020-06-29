@@ -41,7 +41,7 @@ class Donor:
 
 		# start a new thread sending heartbeats message if registration
 		# done message received 
-		_thread = threading.Thread(target = self.sendHeartbeatsMessage)
+		_thread = threading.Thread(target = self.sendHeartbeatsMessage())
 		_thread.start()
 
 		while True:

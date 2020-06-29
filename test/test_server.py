@@ -2,6 +2,7 @@
 import socket
 import threading
 import click
+import json
 
 class Server:
 	"""Define class Server."""
