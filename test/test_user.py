@@ -2,8 +2,9 @@
 import os
 import socket
 import threading
-import psutil
-import platform
+#import psutil
+#import platform
+import json
 import click
 
 class Donor:
@@ -40,7 +41,7 @@ class Donor:
 
 		# start a new thread sending heartbeats message if registration
 		# done message received 
-		_thread = threading.Thread(target = sendHeartbeatsMessage)
+		_thread = threading.Thread(target = self.sendHeartbeatsMessage)
 		_thread.start()
 
 		while True:
