@@ -2,6 +2,8 @@
 import os
 import socket
 import threading
+import psutil
+import platform
 import click
 
 class Donor:
@@ -21,7 +23,7 @@ class Donor:
 		self.socket_listen_server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		self.socket_listen_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 		self.socket_listen_server.bind(('',self.port))
-		self.listen(5)
+		self.socket_listen_server.listen(5)
 
 		self.job = None
 		self.task = None
@@ -57,7 +59,7 @@ class Donor:
 				message = json.loads(message)
 				
 
-	def getDeviceInfo():
+	def getDeviceInfo(self):
 		"""Get device hardware information on this device."""
 
 		device_info = {}
