@@ -41,7 +41,7 @@ class Donor:
 
 		# start a new thread sending heartbeats message if registration
 		# done message received 
-		_thread = threading.Thread(target = self.sendHeartbeatsMessage())
+		_thread = threading.Thread(target = self.sendHeartbeatsMessage)
 		_thread.start()
 
 		while True:
@@ -97,6 +97,30 @@ class Donor:
 		s.connect((self.server_host, self.server_port))
 		s.sendall(message.encode('utf-8'))
 		s.close()
+	
+	def sendHeartbeatsMessage(self):
+		"""Send heartbeats message to the server."""
+
+		'''
+		heartbeat_message = {}
+		heartbeat_message['type'] = 'heart beats'
+		heartbeat_message['host'] = self.host
+		heartbeat_message['port'] = self.port
+		heartbeat_message['task'] = self.task
+		heartbeat_message['job'] = self.job
+		heartbeat_message['PID'] = self.pid
+		heartbeat_message = json.dumps(heartbeat_message)
+
+		while True:
+			self.socket_heartbeats.sendto(message,(self.server_port,self.server_host))
+			time.sleep(5) # time gap
+		'''
+
+		# do nothing currently
+		a = 123
+		print("working on sending heartbeat thread!")
+		time.sleep(5)
+
 
 @click.command()
 @click.argument("donate_time", nargs=1, type=float)

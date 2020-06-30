@@ -53,7 +53,7 @@ class Server:
 
 			# handle donor message
 			if message['type'] == 'registration':
-				registerDonor(message)
+				self.registerDonor(message)
 
 	def registerDonor(self, message):
 		"""Register donor on server."""
