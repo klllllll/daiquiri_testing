@@ -59,7 +59,7 @@ class Donor:
 						break
 				conn.close()
 				message = json.loads(message)
-				
+				handleMessage(message)
 
 	def getDeviceInfo(self):
 		"""Get device hardware information on this device."""
@@ -121,6 +121,15 @@ class Donor:
 		while True:
 			print("working on sending heartbeat thread!")
 			time.sleep(5)
+
+	def handleMessage(self, message):
+		"""Handle message received from the server."""
+		if message['type'] == 'registration_received':
+			# TODO
+			print("received!!!!!!!!!!!!!!!!!!!!!!!")
+		if message['type'] == 'assign_job':
+			# TODO
+			pass
 
 
 @click.command()
