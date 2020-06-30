@@ -59,7 +59,7 @@ class Server:
 		"""Register donor on server."""
 
 		donor = {
-			'donorID': len(self.registered_Donor),
+			'donorID': len(self.registered_donors),
 			'host': message['host'],
 			'port': message['port'],
 			'localPro:cessID': message['PID'],
