@@ -118,9 +118,9 @@ class Donor:
 		'''
 
 		# do nothing currently
-		a = 123
-		print("working on sending heartbeat thread!")
-		time.sleep(5)
+		while True:
+			print("working on sending heartbeat thread!")
+			time.sleep(5)
 
 
 @click.command()
