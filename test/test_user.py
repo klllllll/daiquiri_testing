@@ -59,6 +59,7 @@ class Donor:
 						break
 				conn.close()
 				message = json.loads(message)
+				print('currently received message type: ' + message['type'])
 				handleMessage(message)
 
 	def getDeviceInfo(self):
