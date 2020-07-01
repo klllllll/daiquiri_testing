@@ -73,7 +73,7 @@ class Server:
 		self.registered_donors.append(donor)
 
 		print("donor reg received, IP addr: " + donor['host'])
-		print("1111111111111111111")
+
 		# send an acknowledge message back to the donor
 		response_message = {
 			'type': 'registration_received',
@@ -86,13 +86,13 @@ class Server:
 
 		# donors open a TCP socket connection to listen message from the server
 		response_message = json.dumps(response_message)
-		print("2222222222222222222222")
+
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		print("33333333333333333333")
-		s.connect((message['host'], message['port']))
-		print("44444444444444444444444")
-		s.sendall(response_message)
 		print(message['host'] + message['port'])
+		s.connect((message['host'], message['port']))
+
+		s.sendall(response_message)
+		
 		s.close()
 
 @click.command()
