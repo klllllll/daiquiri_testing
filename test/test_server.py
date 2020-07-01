@@ -89,6 +89,7 @@ class Server:
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		s.connect((message['host'], message['port']))
 		s.sendall(response_message)
+		print(message['host'] + message['port'])
 		s.close()
 
 @click.command()
