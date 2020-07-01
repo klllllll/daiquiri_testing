@@ -48,6 +48,8 @@ class Donor:
 		while True:
 			# receive and handle message from the server and 
 			# run job programs
+
+			print("asdsaasddsa")
 			
 			while True:
 				conn, _ = self.socket_listen_server.accept()
@@ -59,7 +61,6 @@ class Donor:
 						break
 				conn.close()
 				message = json.loads(message)
-				print('currently received message type: ' + message['type'])
 				handleMessage(message)
 
 	def getDeviceInfo(self):
