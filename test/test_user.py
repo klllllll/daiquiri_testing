@@ -14,7 +14,7 @@ class Donor:
 	def __init__(self, port, time):
 		"""Init."""
 
-		self.host = socket.gethostbyname(socket.gethostname())
+		self.host = '18.233.239.152'
 		self.port = port
 		self.server_host = '18.166.56.143' # save this as a config later?
 		self.server_port = 12345
